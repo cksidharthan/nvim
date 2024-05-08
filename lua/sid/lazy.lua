@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
    { import = "sid.plugins" },
+   { import = "sid.plugins.lsp" },
 }, {
   -- defaults = { lazy = true },
   install = {

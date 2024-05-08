@@ -34,3 +34,7 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 -- split windows
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
+
+-- set the border of splits to be bold and thick
+opt.winhighlight = "NormalFloat:NormalFloat,FloatBorder:NormalFloat"
+vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'black', bold = true })

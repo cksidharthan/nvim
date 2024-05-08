@@ -19,3 +19,4 @@ keymap.set("n" ,"<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n" ,"<leader>se", "<C-w>=", { desc = "Make the size of the splits to be equal" })
 keymap.set("n" ,"<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
 keymap.set("n" ,"<leader>so", "<cmd>only<CR>", { desc = "Close all splits except the current one" })
+
