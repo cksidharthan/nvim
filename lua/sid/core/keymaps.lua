@@ -32,4 +32,3 @@ keymap.set("n", "<leader>bc", "<cmd>bd<CR>", { desc = "Close current buffer" })
 keymap.set("n", "<leader>bn", "<cmd>bn<CR>", { desc = "Go to next buffer" })
 keymap.set("n", "<leader>bp", "<cmd>bp<CR>", { desc = "Go to previous buffer" })
 
-
