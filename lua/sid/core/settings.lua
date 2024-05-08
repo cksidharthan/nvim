@@ -15,6 +15,14 @@ opt.autoindent = true -- copy indent from current line when starting a new one
 opt.wrap = false
 opt.laststatus = 3 -- always show status line
 
+-- make sure to not open old buffers when presesing escape key
+opt.hidden = true -- allow hidden buffers
+opt.autowrite = true -- automatically write before running commands
+opt.autoread = true -- automatically read file if it was changed outside of vim
+opt.updatetime = 300 -- time in ms to write swap file
+
+-- disable escape key from opening old buffers
+vim.api.nvim_set_keymap("n", "<Esc>", ":nohlsearch<CR>", { noremap = true, silent = true })
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
@@ -36,8 +44,14 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 -- set the border of splits to be bold and thick
-opt.winhighlight = "NormalFloat:NormalFloat,FloatBorder:NormalFloat"
-vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'black', bold = true })
+vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'white', bold = false })
 
 -- add fillchars to remove ~ and | from the border
-opt.fillchars = "vert:║,fold:·,msgsep:‾,eob: ,msgsep:_,fold: ,diff:╱,msgsep:_,eob: ,fold: ,diff:╱"
+vim.opt.fillchars = {
+    vert = "║",      -- character to use for vertical splits
+    fold = "·",      -- character to use for folds
+    msgsep = "‾",    -- character to use for message separators
+    eob = " ",       -- character to use for the end of the buffer
+    diff = "╱",      -- character to use for diff mode
+    -- Add or remove entries as needed
+}
