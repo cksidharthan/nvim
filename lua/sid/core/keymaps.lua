@@ -28,9 +28,9 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- buffer management
-keymap.set("n", "<leader>bc", "<cmd>bd<CR>", { desc = "Close current buffer" })
-keymap.set("n", "<leader>bn", "<cmd>bn<CR>", { desc = "Go to next buffer" })
-keymap.set("n", "<leader>bp", "<cmd>bp<CR>", { desc = "Go to previous buffer" })
+keymap.set("n", "<leader>cb", "<cmd>bd<CR>", { desc = "Close current buffer" })
+keymap.set("n", "<leader>nb", "<cmd>bn<CR>", { desc = "Go to next buffer" })
+keymap.set("n", "<leader>pb", "<cmd>bp<CR>", { desc = "Go to previous buffer" })
 
 -- code navigation
 keymap.set("n", "<C-]>", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
@@ -45,3 +45,16 @@ keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc =
 keymap.set("n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", { desc = "Format code" })
 keymap.set("n", "<leader>cd", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", { desc = "Show line diagnostics" })
 keymap.set("n", "<leader>cn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", { desc = "Go to next diagnostic" })
+
+-- dap keymaps
+keymap.set("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>")
+keymap.set("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+keymap.set("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
+keymap.set("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>")
+keymap.set("n", "<leader>dc", ":lua require'dap'.continue()<CR>")
+keymap.set("n", "<F5>", ":lua require'dap'.step_over()<CR>")
+keymap.set("n", "<leader>dl", ":lua require'dap'.run_last()<CR>")
+keymap.set("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>")
+keymap.set("n", "<leader>di", ":lua require'dap.ui.widgets'.hover()<CR>")
+keymap.set("n", "<leader>dx", ":lua require'dap'.close()<CR>")
+keymap.set("n", "<leader>dt", ":lua require'dap'.terminate()<CR>")

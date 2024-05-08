@@ -9,10 +9,8 @@ return {
   config = function()
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
-
     -- import mason_lspconfig plugin
     local mason_lspconfig = require("mason-lspconfig")
-    
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -91,6 +89,25 @@ return {
               },
               completion = {
                 callSnippet = "Replace",
+              },
+            },
+          },
+        })
+      end,
+      ["yamlls"] = function()
+        -- configure yaml server (with special settings)
+        lspconfig["yamlls"].setup({
+          capabilities = capabilities,
+          settings = {
+            yaml = {
+              schemaStore = {
+                enable = false,
+              },
+              format = {
+                enable = true,
+              },
+              schemas = {
+                ["https://taskfile.dev/schema.json"] = "Taskfile.{yml,yaml}",
               },
             },
           },
