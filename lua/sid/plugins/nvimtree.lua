@@ -24,6 +24,8 @@ return {
         },
         -- change folder arrow icons
         renderer = {
+          -- add root folder as current folder by getting the current working directory and just show the folder name instead of the full path
+          root_folder_label = vim.fn.fnamemodify(vim.fn.getcwd(), ":t"),
           indent_markers = {
             enable = true,
           },
@@ -36,7 +38,7 @@ return {
             },
           },
         },
-  
+ 
         --disable window_ticker for explorer to work well with window splits
         actions = {
           open_file = {
@@ -47,7 +49,7 @@ return {
           },
         },
         filters = {
-          custom = { ".DS_Store", ".git", ".trunk", ".idea", ".vscode", "node_modules", "vendor"},
+          custom = { ".DS_Store", ".trunk", ".idea", ".vscode", "node_modules", "vendor"},
         },
         git = {
           ignore = false,
