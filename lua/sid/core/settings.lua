@@ -38,3 +38,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- set the border of splits to be bold and thick
 opt.winhighlight = "NormalFloat:NormalFloat,FloatBorder:NormalFloat"
 vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'black', bold = true })
+
+-- add fillchars to remove ~ and | from the border
+opt.fillchars = "vert:║,fold:·,msgsep:‾,eob: ,msgsep:_,fold: ,diff:╱,msgsep:_,eob: ,fold: ,diff:╱"
