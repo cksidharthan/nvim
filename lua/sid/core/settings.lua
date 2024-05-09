@@ -7,6 +7,7 @@ opt.number = true
 opt.incsearch = true
 opt.hlsearch = true
 
+opt.swapfile = false -- don't create swap files
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to space
