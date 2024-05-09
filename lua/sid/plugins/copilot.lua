@@ -3,7 +3,9 @@ return {
     cmd = "Copilot",
     event = "InsertEnter",
     keys = {
-      { "<leader>tc", "<cmd>Copilot toggle<CR>", desc = "Copilot toggle" },
+      -- TODO: right now the copilot toggle is not working so I'm using the below keymaps
+      { "<leader>cod", "<cmd>Copilot disable<CR>", desc = "Copilot disable" },
+      { "<leader>coe", "<cmd>Copilot enable<CR>", desc = "Copilot enable" },
     },
     opts = {
       panel = {
