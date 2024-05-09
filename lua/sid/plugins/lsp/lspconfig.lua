@@ -67,6 +67,30 @@ return {
     require("lspconfig").yamlls.setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      filetypes = { "yaml", "yml" },
+        flags = { debounce_test_changes = 150 },
+        settings = {
+            yaml = {
+                format = {
+                    enable = true,
+                    singleQuote = true,
+                    printWidth = 120,
+                },
+                hover = true,
+                completion = true,
+                validate = true,
+                schemas = {
+                    ["https://taskfile.dev/schema.json"] = {
+                        "/Taskfile.yml",
+                        "/Taskfile.yaml",
+                    },
+                },
+                schemaStore = {
+                    enable = true,
+                    url = "https://www.schemastore.org/json",
+                },
+            },
+        },
     })
   end,
 }
