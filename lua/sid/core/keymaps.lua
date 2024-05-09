@@ -58,3 +58,15 @@ keymap.set("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>")
 keymap.set("n", "<leader>di", ":lua require'dap.ui.widgets'.hover()<CR>")
 keymap.set("n", "<leader>dx", ":lua require'dap'.close()<CR>")
 keymap.set("n", "<leader>dt", ":lua require'dap'.terminate()<CR>")
+
+-- nvim-ufo keymaps
+vim.keymap.set('n', 'fo', require('ufo').openAllFolds)
+vim.keymap.set('n', 'fc', require('ufo').closeAllFolds)
+vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds)
+vim.keymap.set('n', 'zm', require('ufo').closeFoldsWith) -- closeAllFolds == closeFoldsWith(0)
+vim.keymap.set('n', 'zp', function()
+  local winid = require('ufo').peekFoldedLinesUnderCursor()
+  if not winid then
+    vim.lsps.buf.hover()
+  end
+end, {desc = 'Peek folded lines under cursor'})
