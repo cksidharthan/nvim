@@ -3,6 +3,7 @@ return {
   dependencies = {
     'kevinhwang91/promise-async'
   },
+  event = 'VeryLazy',
   config = function()
     local ftMap = {
       vim = 'indent',

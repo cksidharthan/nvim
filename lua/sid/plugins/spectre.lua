@@ -3,6 +3,7 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
+  event = "BufRead",
   enabled = true,
   keys = {
     {

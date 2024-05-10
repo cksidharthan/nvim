@@ -1,5 +1,6 @@
 return {
   "akinsho/nvim-toggleterm.lua",
+  event = "VeryLazy",
   keys = "<leader>tt",
   config = function()
     local map = vim.api.nvim_set_keymap

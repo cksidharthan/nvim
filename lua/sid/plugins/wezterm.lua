@@ -1,6 +1,7 @@
 return {
-    "letieu/wezterm-move.nvim",
-    keys = {
+  "letieu/wezterm-move.nvim",
+  event = "VeryLazy",
+  keys = {
       {
         "<C-h>",
         function()
