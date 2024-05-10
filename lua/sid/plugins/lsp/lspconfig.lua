@@ -84,6 +84,12 @@ return {
                         "/Taskfile.yml",
                         "/Taskfile.yaml",
                     },
+                    ["https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json"] = {
+                        "/azure-pipelines.yml",
+                        "/azure-pipelines.yaml",
+                        "/azure/**/*.yml",
+                        "/azure/**/*.yaml",
+                    },
                 },
                 schemaStore = {
                     enable = true,
