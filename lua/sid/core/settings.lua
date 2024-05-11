@@ -45,7 +45,7 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 -- set the border of splits to be bold and thick
-vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'white', bold = false })
+vim.api.nvim_set_hl(1, 'WinSeparator', { fg = 'white', bold = false })
 
 -- add fillchars to remove ~ and | from the border
 opt.fillchars = {
