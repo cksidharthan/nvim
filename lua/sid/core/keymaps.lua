@@ -28,9 +28,9 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- buffer management
-keymap.set("n", "<leader>cb", "<cmd>bd<CR>", { desc = "Close current buffer" })
-keymap.set("n", "<leader>nb", "<cmd>bn<CR>", { desc = "Go to next buffer" })
-keymap.set("n", "<leader>pb", "<cmd>bp<CR>", { desc = "Go to previous buffer" })
+keymap.set("n", "bx", "<cmd>bd<CR>", { desc = "Close current buffer" })
+keymap.set("n", "bn", "<cmd>bn<CR>", { desc = "Go to next buffer" })
+keymap.set("n", "bp", "<cmd>bp<CR>", { desc = "Go to previous buffer" })
 
 -- code navigation
 keymap.set("n", "<C-]>", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
