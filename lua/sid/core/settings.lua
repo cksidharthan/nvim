@@ -28,7 +28,6 @@ vim.api.nvim_set_keymap("n", "<Esc>", ":nohlsearch<CR>", { noremap = true, silen
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes that you want case sensitive
-
 opt.cursorline = true -- to show a horizontal line on where the cursor is at
 
 opt.termguicolors = true
@@ -46,19 +45,19 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- set the border of splits to be bold and thick
 opt.winhighlight = "NormalFloat:NormalFloat,FloatBorder:NormalFloat"
-vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'white', bold = false })
+vim.api.nvim_set_hl(0, "WinSeparator", { fg = "white", bold = false })
 
 -- add fillchars to remove ~ and | from the border
 opt.fillchars = {
-    vert = "║",      -- character to use for vertical splits
-    fold = "·",      -- character to use for folds
-    msgsep = "‾",    -- character to use for message separators
-    eob = " ",       -- character to use for the end of the buffer
-    diff = "╱",      -- character to use for diff mode
-    -- Add or remove entries as needed
+	vert = "║", -- character to use for vertical splits
+	fold = "·", -- character to use for folds
+	msgsep = "‾", -- character to use for message separators
+	eob = " ", -- character to use for the end of the buffer
+	diff = "╱", -- character to use for diff mode
+	-- Add or remove entries as needed
 }
 
-opt.foldcolumn = '1' -- '0' is not bad
+opt.foldcolumn = "1" -- '0' is not bad
 opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 opt.foldlevelstart = 99
 opt.foldenable = true

@@ -10,15 +10,15 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit Insert mode with jk" })
 
 -- to clear search highlights that we do with /
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear Search highlights" })
-    
+
 keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 keymap.set("n", "<leader>ml", "<cmd>Lazy<cr>")
 -- window management
-keymap.set("n" ,"<leader>sv", "<C-w>v", { desc = "Split window vertically" })
-keymap.set("n" ,"<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
-keymap.set("n" ,"<leader>se", "<C-w>=", { desc = "Make the size of the splits to be equal" })
-keymap.set("n" ,"<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
-keymap.set("n" ,"<leader>so", "<cmd>only<CR>", { desc = "Close all splits except the current one" })
+keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
+keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make the size of the splits to be equal" })
+keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
+keymap.set("n", "<leader>so", "<cmd>only<CR>", { desc = "Close all splits except the current one" })
 
 -- tab management
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
@@ -42,8 +42,13 @@ keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Show hover in
 
 keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename symbol" })
 keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code action" })
-keymap.set("n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", { desc = "Format code" })
-keymap.set("n", "<leader>cd", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", { desc = "Show line diagnostics" })
+keymap.set("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format code" })
+keymap.set(
+	"n",
+	"<leader>cd",
+	"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>",
+	{ desc = "Show line diagnostics" }
+)
 keymap.set("n", "<leader>cn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", { desc = "Go to next diagnostic" })
 
 -- dap keymaps
@@ -60,15 +65,15 @@ keymap.set("n", "<leader>dx", ":lua require'dap'.close()<CR>")
 keymap.set("n", "<leader>dt", ":lua require'dap'.terminate()<CR>")
 
 -- nvim-ufo keymaps
-keymap.set('n', 'fo', ":lua require('ufo').openAllFolds()<CR>")
-keymap.set('n', 'fc', ":lua require('ufo').closeAllFolds()<CR>")
-keymap.set('n', 'zm', ":lua require('ufo').closeFoldsWith()<CR>") -- closeAllFolds == closeFoldsWith(0)
-keymap.set('n', 'zp', function()
-  local winid = require('ufo').peekFoldedLinesUnderCursor()
-  if not winid then
-    vim.lsps.buf.hover()
-  end
-end, {desc = 'Peek folded lines under cursor'})
+keymap.set("n", "fo", ":lua require('ufo').openAllFolds()<CR>")
+keymap.set("n", "fc", ":lua require('ufo').closeAllFolds()<CR>")
+keymap.set("n", "zm", ":lua require('ufo').closeFoldsWith()<CR>") -- closeAllFolds == closeFoldsWith(0)
+keymap.set("n", "zp", function()
+	local winid = require("ufo").peekFoldedLinesUnderCursor()
+	if not winid then
+		vim.lsps.buf.hover()
+	end
+end, { desc = "Peek folded lines under cursor" })
 
 -- noice keymaps
-keymap.set('n', 'nd', ":NoiceDismiss<CR>", { desc = "Dismiss Noice" })
+keymap.set("n", "nd", ":NoiceDismiss<CR>", { desc = "Dismiss Noice" })

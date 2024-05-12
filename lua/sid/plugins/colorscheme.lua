@@ -1,11 +1,16 @@
 return {
-  "sainnhe/sonokai",
-  priority = 1000,
-  config = function()
-    vim.g.sonokai_style = 'andromeda'
-    vim.g.sonokai_enable_italic = 1
-    vim.g.sonokai_disable_italic_comment = 1
-    vim.g.sonokai_transparent_background = 1
-    vim.cmd('colorscheme sonokai')
-  end
+	"scottmckendry/cyberdream.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		require("cyberdream").setup({
+			-- Recommended - see "Configuring" below for more config options
+			transparent = true,
+			italic_comments = true,
+			hide_fillchars = true,
+			borderless_telescope = true,
+			terminal_colors = true,
+		})
+		vim.cmd("colorscheme cyberdream") -- set the colorscheme
+	end,
 }
