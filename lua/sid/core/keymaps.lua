@@ -34,6 +34,7 @@ keymap.set("n", "bp", "<cmd>bp<CR>", { desc = "Go to previous buffer" })
 
 -- code navigation
 keymap.set("n", "<C-]>", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
+-- when i press <C-[> it should go back to the previous location
 keymap.set("n", "<C-[>", "<C-o>", { desc = "Go back to previous location" })
 keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to declaration" })
 keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go to references" })
@@ -77,3 +78,4 @@ end, { desc = "Peek folded lines under cursor" })
 
 -- noice keymaps
 keymap.set("n", "nd", ":NoiceDismiss<CR>", { desc = "Dismiss Noice" })
+

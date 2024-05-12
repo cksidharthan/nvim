@@ -46,14 +46,21 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- set the border of splits to be bold and thick
 opt.winhighlight = "NormalFloat:NormalFloat,FloatBorder:NormalFloat"
 vim.api.nvim_set_hl(0, "WinSeparator", { fg = "white", bold = false })
+opt.foldcolumn = "0" -- '0' is not bad
+opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+opt.foldlevelstart = 99
+opt.foldenable = true
 
 -- add fillchars to remove ~ and | from the border
 opt.fillchars = {
 	vert = "║", -- character to use for vertical splits
-	fold = "·", -- character to use for folds
+	fold = " ", -- character to use for folds
+  foldopen = "", -- character to use for open folds
+  foldsep = " ", -- character to use for separator in folds
+  foldclose = "", -- character to use for close folds
 	msgsep = "‾", -- character to use for message separators
 	eob = " ", -- character to use for the end of the buffer
-	diff = "╱", -- character to use for diff mode
+	-- diff = "╱", -- character to use for diff mode
 	-- Add or remove entries as needed
 }
 
