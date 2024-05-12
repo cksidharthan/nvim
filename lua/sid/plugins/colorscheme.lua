@@ -1,16 +1,18 @@
 return {
-	"scottmckendry/cyberdream.nvim",
+	"EdenEast/nightfox.nvim",
 	lazy = false,
 	priority = 1000,
+	opts = {},
 	config = function()
-		require("cyberdream").setup({
-			-- Recommended - see "Configuring" below for more config options
-			transparent = true,
-			italic_comments = true,
-			hide_fillchars = true,
-			borderless_telescope = true,
-			terminal_colors = true,
+		require("nightfox").setup({
+			options = {
+				styles = {
+					comments = "italic",
+					keywords = "bold",
+					types = "italic,bold",
+				},
+			},
 		})
-		vim.cmd("colorscheme cyberdream") -- set the colorscheme
+		vim.cmd("colorscheme carbonfox")
 	end,
 }
