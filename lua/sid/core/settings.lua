@@ -49,8 +49,11 @@ vim.api.nvim_set_hl(0, "WinSeparator", { fg = "white", bold = false })
 opt.foldcolumn = "0" -- '0' is not bad
 opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 opt.foldlevelstart = 99
-opt.foldenable = true
-
+-- opt.foldenable = true
+opt.foldmethod = "indent"
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
+vim.g.markdown_folding = 1 -- enable markdown folding
 -- add fillchars to remove ~ and | from the border
 opt.fillchars = {
 	vert = "║", -- character to use for vertical splits
