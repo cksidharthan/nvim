@@ -1,6 +1,6 @@
 return {
 	"FabijanZulj/blame.nvim",
-  event = { "VeryLazy"},
+  event = "VeryLazy",
 	config = function()
 		require("blame").setup()
 
