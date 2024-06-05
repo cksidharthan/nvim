@@ -2,6 +2,9 @@ vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt
 
+-- set nocompatible
+opt.compatible = false
+
 opt.relativenumber = true
 opt.number = true
 opt.incsearch = true
