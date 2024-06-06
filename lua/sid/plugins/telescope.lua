@@ -13,6 +13,13 @@ return {
 		telescope.setup({
 			defaults = {
         prompt_prefix = " 🚀 ",
+        layout_strategy = "horizontal",
+        layout_config = {
+          horizontal = {
+            -- prompt_position = "top",
+          }
+        },
+        sorting_strategy = "ascending",
 				path_display = { "smart" },
 				mappings = {
 					i = {
@@ -59,7 +66,7 @@ return {
 			{ desc = "Fuzzy find todos in Current working directory" }
 		)
 		keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Fuzzy find help tags" })
-		keymap.set("n", "<leader>fl", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Fuzzy find in current buffer" })
+		keymap.set("n", "<leader>fl", "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending<CR>", { desc = "Fuzzy find in current buffer" })
 		keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "Fuzzy find keymaps" })
 	end,
 }
