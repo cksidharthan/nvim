@@ -20,7 +20,6 @@ return {
 						-- prompt_position = "top",
 					},
 				},
-				sorting_strategy = "ascending",
 				path_display = { "smart" },
 				mappings = {
 					i = {
@@ -74,5 +73,7 @@ return {
 			{ desc = "Fuzzy find in current buffer" }
 		)
 		keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "Fuzzy find keymaps" })
+    -- add keymap for lsp symbols in the current buffer
+    keymap.set("n", "<leader>flb", "<cmd>Telescope lsp_document_symbols<CR>", { desc = "Fuzzy find buffer symbols in the current file" })
 	end,
 }
