@@ -5,14 +5,6 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
 		{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
-		{
-			"SmiteshP/nvim-navbuddy",
-			dependencies = {
-				"SmiteshP/nvim-navic",
-				"MunifTanjim/nui.nvim",
-			},
-			opts = { lsp = { auto_attach = true } },
-		},
 	},
 	config = function()
 		-- import lspconfig plugin
