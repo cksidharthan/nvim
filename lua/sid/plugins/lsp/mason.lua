@@ -1,8 +1,9 @@
 return {
-	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
+		"williamboman/mason.nvim",
 	},
+  event = "VeryLazy",
 	config = function()
 		-- import mason
 		local mason = require("mason")

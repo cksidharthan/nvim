@@ -1,6 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.8",
+	event = "VeryLazy",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -12,14 +13,14 @@ return {
 
 		telescope.setup({
 			defaults = {
-        prompt_prefix = " 🚀 ",
-        layout_strategy = "horizontal",
-        layout_config = {
-          horizontal = {
-            -- prompt_position = "top",
-          }
-        },
-        sorting_strategy = "ascending",
+				prompt_prefix = " 🚀 ",
+				layout_strategy = "horizontal",
+				layout_config = {
+					horizontal = {
+						-- prompt_position = "top",
+					},
+				},
+				sorting_strategy = "ascending",
 				path_display = { "smart" },
 				mappings = {
 					i = {
@@ -62,11 +63,16 @@ return {
 			"n",
 			"<leader>en",
 			"<cmd>Telescope find_files cwd=~/.config/nvim<CR>",
-      		{ desc = "Fuzzy find filetypes in Current working directory" },
+			{ desc = "Fuzzy find filetypes in Current working directory" },
 			{ desc = "Fuzzy find todos in Current working directory" }
 		)
 		keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Fuzzy find help tags" })
-		keymap.set("n", "<leader>fl", "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending<CR>", { desc = "Fuzzy find in current buffer" })
+		keymap.set(
+			"n",
+			"<leader>fl",
+			"<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending<CR>",
+			{ desc = "Fuzzy find in current buffer" }
+		)
 		keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "Fuzzy find keymaps" })
 	end,
 }
