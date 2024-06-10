@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		"williamboman/mason.nvim",
 	},
-  event = "VeryLazy",
+  cmd = "Mason",
 	config = function()
 		-- import mason
 		local mason = require("mason")
