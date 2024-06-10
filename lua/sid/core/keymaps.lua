@@ -76,4 +76,4 @@ keymap.set("n", "zp", function()
 	end
 end, { desc = "Peek folded lines under cursor" })
 
-keymap.set("n", "<leader>re", ":e .<CR>", { desc = "Reload current window" })
+keymap.set("n", "<leader>re", ":e!<CR>", { desc = "Reload current window" })
