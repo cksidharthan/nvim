@@ -76,6 +76,4 @@ keymap.set("n", "zp", function()
 	end
 end, { desc = "Peek folded lines under cursor" })
 
--- noice keymaps
-keymap.set("n", "nd", ":NoiceDismiss<CR>", { desc = "Dismiss Noice" })
-
+keymap.set("n", "<leader>re", ":e .<CR>", { desc = "Reload current window" })
