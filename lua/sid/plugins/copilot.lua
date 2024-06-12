@@ -27,8 +27,7 @@ return {
 			auto_trigger = true,
 			debounce = 75,
 			keymap = {
-				-- udr tab to accept suggestion
-				accept = "<Tab>",
+				accept = "<C-CR>",
 				dismiss = "<M-h>",
 				accept_word = false,
 				accept_line = false,

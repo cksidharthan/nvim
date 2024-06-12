@@ -78,5 +78,3 @@ end, { desc = "Peek folded lines under cursor" })
 
 keymap.set("n", "<leader>re", ":e!<CR>", { desc = "Reload current window" })
 keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice notifications" })
-keymap.set('i', '<Tab>', '<Tab>', { noremap = true })
-
