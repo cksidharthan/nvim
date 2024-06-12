@@ -14,7 +14,7 @@ return {
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
-				-- yaml = { "prettier" },
+        yaml = { "yamlfmt" },
 				markdown = { "prettier" },
 				graphql = { "prettier" },
 				liquid = { "prettier" },
@@ -22,6 +22,10 @@ return {
 				python = { "isort", "black" },
 				go = { "gofmt", "goimports" },
 			},
+      format_on_save = {
+        timout_ms = 200,
+        lsp_fallback = true,
+      }
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()

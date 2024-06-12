@@ -39,7 +39,9 @@ return {
 			settings = {
 				gopls = {
 					analyses = {
+            completeUnimported = true,
 						unusedparams = true,
+            usePlaceholders = true,
 					},
 					staticcheck = true,
 				},
