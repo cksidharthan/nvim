@@ -5,7 +5,7 @@ return {
 	config = function()
 		require("cyberdream").setup({
 			-- Enable transparent background
-			transparent = true,
+			transparent = false,
 
 			-- Enable italics comments
 			italic_comments = true,
@@ -35,7 +35,6 @@ return {
 				colors = {
 					-- For a list of colors see `lua/cyberdream/colours.lua`
 					-- Example:
-					bg = "#000000",
 					green = "#00ff00",
 					magenta = "#ff00ff",
 				},

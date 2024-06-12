@@ -7,12 +7,14 @@ return {
 			options = {
 				mode = "buffer",
 				show_tab_indicators = true,
+        show_close_icon = true,
+        color_icons = true,
+        indicator = {
+          style = "underline",
+        },
+
 				diagnostics = "nvim_lsp",
-				hover = {
-					enabled = true,
-					delay = 150,
-					reveal = { "close" },
-				},
+        separator_style = "slope",
 				offsets = {
 					{
 						filetype = "NvimTree",

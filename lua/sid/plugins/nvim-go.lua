@@ -10,7 +10,7 @@ return {
 		-- setup nvim-go
 		require("go").setup({
 			-- notify: use nvim-notify
-			notify = false,
+			notify = true,
 			-- auto commands
 			auto_format = true,
 			auto_lint = true,
@@ -44,7 +44,5 @@ return {
 			-- quick type
 			quick_type_flags = { "--just-types" },
 		})
-		-- setup lsp client
-		require("lspconfig").gopls.setup({})
 	end,
 }
