@@ -68,12 +68,14 @@ return {
 		keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Fuzzy find help tags" })
 		keymap.set(
 			"n",
-			"<leader>fl",
+			"<leader>fb",
 			"<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending<CR>",
 			{ desc = "Fuzzy find in current buffer" }
 		)
 		keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "Fuzzy find keymaps" })
     -- add keymap for lsp symbols in the current buffer
-    keymap.set("n", "<leader>flb", "<cmd>Telescope lsp_document_symbols<CR>", { desc = "Fuzzy find buffer symbols in the current file" })
+    keymap.set("n", "<leader>ft", "<cmd>Telescope lsp_document_symbols<CR>", { desc = "Fuzzy find symbols and types in the current file" })
 	end,
 }
+
+
