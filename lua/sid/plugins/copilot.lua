@@ -27,7 +27,8 @@ return {
 			auto_trigger = true,
 			debounce = 75,
 			keymap = {
-				accept = "<C-CR>",
+        -- make tab to accept suggestion
+				accept = "<Tab>",
 				dismiss = "<M-h>",
 				accept_word = false,
 				accept_line = false,
@@ -37,6 +38,7 @@ return {
 		},
 		filetypes = {
 			["."] = true,
+      md = true,
 			go = true,
 			yaml = true,
 			json = true,
