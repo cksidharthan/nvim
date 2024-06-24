@@ -1,6 +1,6 @@
 # My Neovim Configuration
 
-This is my personal Neovim configuration. It is a work in progress(indefinitelu :P) and I am constantly tweaking it to make it better. I have tried to keep it as minimal as possible and only include the plugins that I find useful.
+This is my personal Neovim configuration. It is a work in progress(indefinitely :P) and I am constantly tweaking it to make it better. I have tried to keep it as minimal as possible and only include the plugins that I find useful.
 
 ## Installation
 *NOTE*: If you have an existing Neovim configuration, make sure to backup your existing configuration before proceeding.
@@ -9,14 +9,14 @@ This is my personal Neovim configuration. It is a work in progress(indefinitelu 
 
 2. Clone this repository to `~/.config/nvim`:
    ```bash
-   git clone github.com/cksidharthan/nvim.git ~/.config/nvim
+   git clone git@github.com/cksidharthan/nvim.git ~/.config/nvim
    ```
 
 3. Install [Wezterm](https://wezfurlong.org/wezterm/installation.html) (optional)
 
 4. Install dependencies:
    ```bash
-   brew install lazygit ripgrep
+   brew install lazygit ripgrep luarocks
    ```
 
 ## Features

@@ -23,11 +23,11 @@ return {
 						symbols = {
 							status = {
 								icons = {
-									enabled = "🟢",
-									sleep = "😴", -- auto-trigger disabled
-									disabled = "🔒",
-									warning = "☢️",
-									unknown = "🚫",
+								  enabled = " ",
+									sleep = " ", -- auto-trigger disabled
+									disabled = " ",
+									warning = " ",
+									unknown = " ",
 								},
 								hl = {
 									enabled = "#50FA7B",
