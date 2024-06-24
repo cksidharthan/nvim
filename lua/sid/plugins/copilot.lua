@@ -38,7 +38,8 @@ return {
 		},
 		filetypes = {
 			["."] = true,
-      md = true,
+			md = true,
+      markdown = true,
 			go = true,
 			yaml = true,
 			json = true,
@@ -49,8 +50,6 @@ return {
 			conf = true,
 			javascript = true,
 			typescript = true,
-			c = false,
-			cpp = false,
 		},
 		server_opts_overrides = {},
 	},

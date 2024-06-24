@@ -23,11 +23,11 @@ return {
 						symbols = {
 							status = {
 								icons = {
-									enabled = " ",
+									enabled = "🟢",
 									sleep = "😴", -- auto-trigger disabled
-									disabled = " ",
-									warning = " ",
-									unknown = " ",
+									disabled = "🔒",
+									warning = "☢️",
+									unknown = "🚫",
 								},
 								hl = {
 									enabled = "#50FA7B",
@@ -44,7 +44,7 @@ return {
 						show_loading = true,
 					},
 					{ "encoding" },
-					{ "fileformat", symbols = { unix = "🍏" } },
+					{ "fileformat", symbols = { unix = "🍎" } },
 					{ "filetype" },
 				},
 				lualine_a = {
