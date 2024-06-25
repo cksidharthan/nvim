@@ -10,7 +10,7 @@ return {
         show_close_icon = true,
         color_icons = true,
         indicator = {
-          style = "underline",
+          style = "round",
         },
 
 				diagnostics = "nvim_lsp",
