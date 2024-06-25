@@ -12,6 +12,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
+-- create a group to assign json comamnds. Right now, it only formats json using jq
+vim.api.nvim_create_augroup("JsonFormatting", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  group = "JsonFormatting",
+  pattern = "json",
+  callback = function()
+    vim.api.nvim_buf_create_user_command(0, 'FormatJSON', function(opts)
+      local start_line = opts.line1
+      local end_line = opts.line2
+      vim.cmd(string.format('%d,%d!jq \'.\'', start_line, end_line))
+      vim.api.nvim_echo({
+        {'JSON formatted using jq. Make sure jq is installed!', 'WarningMsg'}
+      }, true, {})
+    end, {range = '%'})
+  end
+})
 
 -- Create group to assign commands
 -- "clear = true" must be set to prevent loading an
