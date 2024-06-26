@@ -68,7 +68,7 @@ return {
 		keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Fuzzy find help tags" })
 		keymap.set(
 			"n",
-			"<leader>fb",
+			"<leader>fib",
 			"<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending<CR>",
 			{ desc = "Fuzzy find in current buffer" }
 		)
