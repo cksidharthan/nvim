@@ -52,19 +52,6 @@ keymap.set(
 )
 keymap.set("n", "<leader>cn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", { desc = "Go to next diagnostic" })
 
--- dap keymaps
-keymap.set("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>")
-keymap.set("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
-keymap.set("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
-keymap.set("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>")
-keymap.set("n", "<leader>dc", ":lua require'dap'.continue()<CR>")
-keymap.set("n", "<F5>", ":lua require'dap'.step_over()<CR>")
-keymap.set("n", "<leader>dl", ":lua require'dap'.run_last()<CR>")
-keymap.set("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>")
-keymap.set("n", "<leader>di", ":lua require'dap.ui.widgets'.hover()<CR>")
-keymap.set("n", "<leader>dx", ":lua require'dap'.close()<CR>")
-keymap.set("n", "<leader>dt", ":lua require'dap'.terminate()<CR>")
-
 -- nvim-ufo keymaps
 keymap.set("n", "fo", ":lua require('ufo').openAllFolds()<CR>")
 keymap.set("n", "fc", ":lua require('ufo').closeAllFolds()<CR>")
