@@ -52,17 +52,6 @@ keymap.set(
 )
 keymap.set("n", "<leader>cn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", { desc = "Go to next diagnostic" })
 
--- nvim-ufo keymaps
-keymap.set("n", "fo", ":lua require('ufo').openAllFolds()<CR>")
-keymap.set("n", "fc", ":lua require('ufo').closeAllFolds()<CR>")
-keymap.set("n", "zm", ":lua require('ufo').closeFoldsWith()<CR>") -- closeAllFolds == closeFoldsWith(0)
-keymap.set("n", "zp", function()
-	local winid = require("ufo").peekFoldedLinesUnderCursor()
-	if not winid then
-		vim.lsps.buf.hover()
-	end
-end, { desc = "Peek folded lines under cursor" })
-
 keymap.set("n", "<leader>re", ":e!<CR>", { desc = "Reload current window" })
 keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice notifications" })
 
