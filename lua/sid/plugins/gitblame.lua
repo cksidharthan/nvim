@@ -1,12 +1,7 @@
 return {
-	"FabijanZulj/blame.nvim",
+  "f-person/git-blame.nvim",
   event = "VeryLazy",
-	config = function()
-		require("blame").setup()
-
-		local keymap = require("vim.keymap")
-
-		-- Toggle blame window using :BlameToggle
-		keymap.set("n", "<leader>gb", ":BlameToggle<CR>", { desc = "Toggle git blame window" })
-	end,
+  config = function()
+    vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameToggle<CR>", { desc = "Toggle Git Blame information" })
+  end
 }
