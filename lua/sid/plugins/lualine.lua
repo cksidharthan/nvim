@@ -11,7 +11,7 @@ return {
 			options = {
         icons_enabled = true,
 				-- theme = my_lualine_theme,
-        theme = "powerline",
+        theme = "ayu_mirage",
         -- component_separators = { right = "█", left = "█" },
         section_separators = { right = "█" , left = "█" },
 			},

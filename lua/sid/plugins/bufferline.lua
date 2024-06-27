@@ -12,7 +12,8 @@ return {
         indicator = {
           style = "round",
         },
-
+        buffer_close_icon = 'Ⅹ ',
+        close_icon = 'Ⅹ ',
 				diagnostics = "nvim_lsp",
         separator_style = "slope",
 				offsets = {
