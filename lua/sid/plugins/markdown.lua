@@ -1,8 +1,10 @@
 return {
-    'MeanderingProgrammer/markdown.nvim',
-    name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    config = function()
-        require('render-markdown').setup({})
+    "OXY2DEV/markview.nvim",
+    dependencies = {
+        "nvim-tree/nvim-web-devicons", -- Used by the code bloxks
+    },
+
+    config = function ()
+        require("markview").setup();
     end
 }

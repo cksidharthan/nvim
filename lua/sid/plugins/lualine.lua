@@ -48,7 +48,8 @@ return {
 					{ "filetype" },
 				},
 				lualine_a = {
-					{ "mode", icon = "" },
+					{ "mode", icon = "🚀" },
+					-- { "mode", icon = "" },
 				},
 				lualine_c = {
 					{
