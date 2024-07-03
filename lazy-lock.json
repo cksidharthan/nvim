@@ -57,3 +57,4 @@
   "vim-tmux-navigator": { "branch": "master", "commit": "5b3c701686fb4e6629c100ed32e827edf8dad01e" },
   "wezterm-move.nvim": { "branch": "master", "commit": "89922fea450da1b38ba80879009294848fe38d71" },
   "which-key.nvim": { "branch": "main", "commit": "0099511294f16b81c696004fa6a403b0ae61f7a0" }
+}
