@@ -27,7 +27,6 @@ opt.updatetime = 300 -- time in ms to write swap file
 
 -- disable escape key from opening old buffers
 vim.api.nvim_set_keymap("n", "<Esc>", ":nohlsearch<CR>", { noremap = true, silent = true })
-
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes that you want case sensitive

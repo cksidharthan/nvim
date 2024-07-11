@@ -1,6 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = { 
+  event = {
     "BufReadPre",
     "BufNewFile",
   },
@@ -15,6 +15,12 @@ return {
 
     -- configure treesitter
     treesitter.setup({ -- enable syntax highlighting
+      auto_install = true,
+      ignore_install = {},
+      sync_install = true,
+      modules = {},
+
+      -- enable syntax highlighting
       highlight = {
         enable = true,
       },
