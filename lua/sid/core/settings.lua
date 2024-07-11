@@ -9,6 +9,7 @@ opt.relativenumber = true
 opt.number = true
 opt.incsearch = true
 opt.hlsearch = true
+opt.showmode = true 
 
 opt.swapfile = false -- don't create swap files
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)

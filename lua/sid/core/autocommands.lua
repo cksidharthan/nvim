@@ -29,6 +29,18 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
+local on_attach = function(_, bufnr)
+  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+    vim.lsp.buf.format({
+      bufnr = bufnr,
+      filter = function(client)
+    	  return client.name == "null-ls"
+      end
+    })
+    print("File formatted")
+  end, { desc = 'Format current buffer with LSP' })
+end
+
 -- Create group to assign commands
 -- "clear = true" must be set to prevent loading an
 -- auto-command repeatedly every time a file is resourced
