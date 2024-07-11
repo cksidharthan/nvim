@@ -7,6 +7,17 @@ return {
   },
   config = function()
     local cmp = require("cmp")
+    local types = require("cmp.types")
+
+    -- Function to sort LSP snippets, so that they appear at the end of LSP suggestions
+    local function deprioritize_snippet(entry1, entry2)
+      if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
+        return false
+      end
+      if entry2:get_kind() == types.lsp.CompletionItemKind.Snippet then
+        return true
+      end
+    end
 
     cmp.setup({
       completion = {
@@ -23,7 +34,7 @@ return {
       }),
       -- sources for autocompletion
       sources = cmp.config.sources({
-        { name = "nvim_lsp" }, -- language server protocol
+        { name = "nvim_lsp" },
         -- { name = "luasnip" }, -- snippets
         -- { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
@@ -32,6 +43,7 @@ return {
       sorting = {
         priority_weight = 2,         -- sort by source priority
         comparators = {
+          deprioritize_snippet,       -- sort snippets last
           cmp.config.compare.offset, -- sort by cursor position
           cmp.config.compare.exact,  -- sort by exact match
           cmp.config.compare.score,  -- sort by score
