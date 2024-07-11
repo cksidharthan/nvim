@@ -2,7 +2,8 @@ return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   dependencies = {
-    "hrsh7th/cmp-path", -- source for file system paths
+    "hrsh7th/cmp-path",     -- source for file system paths
+    "onsails/lspkind-nvim", -- pictograms in completion menu
   },
   config = function()
     local cmp = require("cmp")
@@ -17,7 +18,7 @@ return {
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-b>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-        ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+        ["<C-e>"] = cmp.mapping.abort(),        -- close completion window
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
       }),
       -- sources for autocompletion
@@ -29,18 +30,28 @@ return {
       }),
 
       sorting = {
-        priority_weight = 2, -- sort by source priority
+        priority_weight = 2,         -- sort by source priority
         comparators = {
           cmp.config.compare.offset, -- sort by cursor position
-          cmp.config.compare.exact, -- sort by exact match
-          cmp.config.compare.score, -- sort by score
-          cmp.config.compare.kind, -- sort by kind
+          cmp.config.compare.exact,  -- sort by exact match
+          cmp.config.compare.score,  -- sort by score
+          cmp.config.compare.kind,   -- sort by kind
           cmp.config.compare.length, -- sort by length
-          cmp.config.compare.order, -- sort by order
+          cmp.config.compare.order,  -- sort by order
         },
       },
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
+        expandable_indicator = false,
+        fields = { "kind", "abbr", "menu" },
+        format = function(entry, vim_item)
+          local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+          local strings = vim.split(kind.kind, "%s", { trimempty = true })
+          kind.kind = " " .. (strings[1] or "") .. " "
+          kind.menu = "    (" .. (strings[2] or "") .. ")"
+
+          return kind
+        end,
       },
     })
   end,
