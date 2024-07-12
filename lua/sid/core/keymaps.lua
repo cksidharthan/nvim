@@ -11,6 +11,9 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit Insert mode with jk" })
 -- to clear search highlights that we do with /
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear Search highlights" })
 
+-- make yaf to copy the whole function 
+keymap.set("n", "yaf", "va{Vy", { desc = "Copy the whole function" })
+
 keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 keymap.set("n", "<leader>ml", "<cmd>Lazy<cr>")
 -- window management

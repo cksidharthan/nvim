@@ -5,10 +5,7 @@ return {
 		vim.o.timeout = true
 		vim.o.timeoutlen = 500
 	end,
-
-	opts = {
-		-- your configuration comes here
-		-- or leave it empty to use the default configuration
-		-- refer to the configuration section below
-	},
+  config = function()
+    require("which-key").setup({})
+  end
 }
