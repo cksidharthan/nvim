@@ -5,15 +5,14 @@ return {
 	},
 	config = function()
 		local lualine = require("lualine")
-		local lazy_status = require("lazy.status")
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
         icons_enabled = true,
 				-- theme = my_lualine_theme,
         theme = "ayu_mirage",
-        -- component_separators = { right = "█", left = "█" },
-        section_separators = { right = "█" , left = "█" },
+        component_separators = { right = "┃", left = "┃" },
+        section_separators = { right = "┃", left = "┃" },
 			},
 			sections = {
 				lualine_x = {
