@@ -29,30 +29,25 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
-local on_attach = function(_, bufnr)
-  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-    vim.lsp.buf.format({
-      bufnr = bufnr,
-      filter = function(client)
-    	  return client.name == "null-ls"
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    local params = vim.lsp.util.make_range_params()
+    params.context = {only = {"source.organizeImports"}}
+    -- buf_request_sync defaults to a 1000ms timeout. Depending on your
+    -- machine and codebase, you may want longer. Add an additional
+    -- argument after params if you find that you have to write the file
+    -- twice for changes to be saved.
+    -- E.g., vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
+    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
+    for cid, res in pairs(result or {}) do
+      for _, r in pairs(res.result or {}) do
+        if r.edit then
+          local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+          vim.lsp.util.apply_workspace_edit(r.edit, enc)
+        end
       end
-    })
-    print("File formatted")
-  end, { desc = 'Format current buffer with LSP' })
-end
-
--- Create group to assign commands
--- "clear = true" must be set to prevent loading an
--- auto-command repeatedly every time a file is resourced
-local autocmd_group = vim.api.nvim_create_augroup("Custom auto-commands", { clear = true })
-
--- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
---     pattern = { "*.yaml", "*.yml" },
---     desc = "Auto-format YAML files after saving",
---     callback = function()
---         local fileName = vim.api.nvim_buf_get_name(0)
---         vim.cmd(":!yamlfmt " .. fileName) -- or vim.cmd(":silent !yamlfmt " .. fileName)
---     end,
---     group = autocmd_group,
--- })
-
+    end
+    vim.lsp.buf.format({async = false})
+  end
+})
