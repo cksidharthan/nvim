@@ -1,6 +1,5 @@
 return {
 	"akinsho/bufferline.nvim",
-	event = "BufWinEnter",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
 		require("bufferline").setup({
@@ -21,7 +20,7 @@ return {
 						filetype = "NvimTree",
 						text = "File Explorer",
 						text_align = "center",
-						separator = true,
+						separator = false,
 					},
 				},
 			},

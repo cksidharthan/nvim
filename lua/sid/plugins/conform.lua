@@ -19,6 +19,7 @@ return {
         ruby = { "standardrb" },
         markdown = { { "prettierd", "prettier" } },
         erb = { "htmlbeautifier" },
+        go = { "gofmt" },
         html = { "htmlbeautifier" },
         bash = { "beautysh" },
         proto = { "buf" },
@@ -39,4 +40,4 @@ return {
       })
     end, { desc = "Format file or range (in visual mode)" })
   end,
-} 
+}
