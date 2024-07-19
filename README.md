@@ -9,7 +9,7 @@ This is my personal Neovim configuration. It is a work in progress(indefinitely 
 
 2. Clone this repository to `~/.config/nvim`:
    ```bash
-   git clone git@github.com/cksidharthan/nvim.git ~/.config/nvim
+   git clone git@github.com:cksidharthan/nvim.git ~/.config/nvim
    ```
 
 3. Install [Wezterm](https://wezfurlong.org/wezterm/installation.html) (optional)
