@@ -84,3 +84,20 @@ vim.diagnostic.config({
     border = 'rounded',
   },
 })
+
+-- settings for colorscheme transparency
+vim.cmd("hi NormalFloat ctermbg=NONE guibg=NONE")
+vim.cmd("hi FloatTitle ctermbg=NONE guibg=NONE")
+vim.cmd("hi FloatBorder ctermbg=NONE guibg=NONE")
+vim.cmd("hi DiagnosticFloatingHint  ctermbg=NONE guibg=NONE guifg=#42E66C")
+vim.cmd("hi DiagnosticFloatingInfo ctermbg=NONE guibg=NONE guifg=#0876c5")
+vim.cmd("hi DiagnosticFloatingWarn ctermbg=NONE guibg=NONE guifg=#E8AB53")
+vim.cmd("hi DiagnosticFloatingError ctermbg=NONE guibg=NONE guifg=#ff5189")
+vim.g.sonokai_transparent_background = 2
+vim.cmd("set background=dark")
+vim.g.sonokai_style = 'atlantis'
+vim.g.sonokai_better_performance = 1
+vim.g.sonokai_show_eob = 1
+vim.g.sonokai_diagnostic_text_highlight = 0
+vim.g.sonokai_diagnostic_line_highlight = 0
+vim.g.sonokai_diagnostic_virtual_text = 'grey'

@@ -20,7 +20,7 @@ return {
         markdown = { { "prettierd", "prettier" } },
         erb = { "htmlbeautifier" },
         go = { "gofmt" },
-        html = { "htmlbeautifier" },
+        html = { { "prettier", "prettierd", "htmlbeautifier" } },
         bash = { "beautysh" },
         proto = { "buf" },
         rust = { "rustfmt" },
