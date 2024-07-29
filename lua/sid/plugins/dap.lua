@@ -142,11 +142,11 @@ return {
         elements = {
           {
             id = "repl",
-            size = 0.15
+            size = 0.50
           },
           {
             id = "scopes",
-            size = 0.85
+            size = 0.50
           }
         },
         position = "bottom",
