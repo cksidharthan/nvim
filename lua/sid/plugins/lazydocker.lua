@@ -1,6 +1,6 @@
 return {
   "crnvl96/lazydocker.nvim",
-  event = "VeryLazy",
+  cmd = "LazyDocker",
   dependencies = {
     "MunifTanjim/nui.nvim",
   },
