@@ -36,6 +36,8 @@ return {
 
     local keymap = vim.keymap
 
+    keymap.set("n", "<leader>fc", "<cmd>Telescope colorscheme<CR>", { desc = "Change Colorscheme" })
+
     keymap.set(
       "n",
       "<leader>ff",
@@ -48,12 +50,6 @@ return {
       "<leader>fs",
       "<cmd>Telescope live_grep<CR>",
       { desc = "Fuzzy string in Current working directory" }
-    )
-    keymap.set(
-      "n",
-      "<leader>fc",
-      "<cmd>Telescope grep_string<CR>",
-      { desc = "Fuzzy string under cursor in Current working directory" }
     )
     -- add another keymap for listing open buffers
     keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Fuzzy find open buffers" })
