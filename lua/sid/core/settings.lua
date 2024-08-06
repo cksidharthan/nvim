@@ -69,22 +69,6 @@ opt.foldlevel = 99   -- Using ufo provider need a large value, feel free to decr
 opt.foldlevelstart = 99
 opt.foldenable = true
 
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-  vim.lsp.handlers.hover,
-  { border = 'rounded' }
-)
-
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-  vim.lsp.handlers.signature_help,
-  { border = 'rounded' }
-)
-
-vim.diagnostic.config({
-  float = {
-    border = 'rounded',
-  },
-})
-
 -- settings for colorscheme transparency
 vim.cmd("hi NormalFloat ctermbg=NONE guibg=NONE")
 vim.cmd("hi FloatTitle ctermbg=NONE guibg=NONE")
