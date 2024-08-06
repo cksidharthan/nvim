@@ -8,7 +8,7 @@ return {
 			transparent = true,
 
 			-- Enable italics comments
-			italic_comments = false,
+			italic_comments = true,
 
 			-- Replace all fillchars with ' ' for the ultimate clean look
 			hide_fillchars = false,
@@ -21,7 +21,7 @@ return {
 
 			-- Use caching to improve performance - WARNING: experimental feature - expect the unexpected!
 			-- Early testing shows a 60-70% improvement in startup time. YMMV. Disables dynamic light/dark theme switching.
-			cache = false, -- generate cache with :CyberdreamBuildCache and clear with :CyberdreamClearCache
+			cache = true, -- generate cache with :CyberdreamBuildCache and clear with :CyberdreamClearCache
 
 			theme = {
 				variant = "default", -- use "light" for the light variant. Also accepts "auto" to set dark or light colors based on the current value of `vim.o.background`
