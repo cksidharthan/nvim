@@ -52,6 +52,7 @@ return {
         "bash",
         "cmake",
         "jsonc",
+        "vue",
         "query",
         "python",
         "regex",

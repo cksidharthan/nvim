@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"williamboman/mason.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+    'neovim/nvim-lspconfig',
 	},
 	cmd = "Mason",
 	config = function()
@@ -26,6 +27,7 @@ return {
 		})
 
 		mason_lspconfig.setup({
+      automatic_installation = true,
 			-- list of servers for mason to install
 			ensure_installed = {
 				"tsserver",
@@ -42,7 +44,6 @@ return {
 				"docker_compose_language_service",
 				"helm_ls",
 				"volar",
-				"vuels",
 				"gopls",
 				"yamlls",
 			},

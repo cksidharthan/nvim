@@ -5,6 +5,6 @@ return {
         "nvim-tree/nvim-web-devicons", -- Used by the code bloxks
     },
     config = function ()
-        require("markview").setup();
+        require("markview").setup({});
     end
 }

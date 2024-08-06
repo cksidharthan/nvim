@@ -57,6 +57,3 @@ keymap.set("n", "<leader>cn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", { d
 
 keymap.set("n", "<leader>re", ":e!<CR>", { desc = "Reload current window" })
 keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice notifications" })
-
--- aerial 
-keymap.set("n", "<leader>aa", ":AerialToggle<CR>", { desc = "Toggle Aerial" })
