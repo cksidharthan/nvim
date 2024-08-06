@@ -105,7 +105,8 @@ return {
 			on_attach = on_attach,
 			init_options = {
 				typescript = {
-					tsdk = "/Users/yd83ap/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
+          -- get the home directory of the current user and append the path to the typescript lib
+          tsdk = vim.fn.expand("~/") .. ".local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
 				},
 				preferences = {
 					disableSuggestions = true,

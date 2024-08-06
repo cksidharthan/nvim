@@ -14,8 +14,13 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear Search highlights" })
 -- make yaf to copy the whole function 
 keymap.set("n", "yaf", "va{Vy", { desc = "Copy the whole function" })
 
+-- Lazy plugin manager management
 keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-keymap.set("n", "<leader>ml", "<cmd>Lazy<cr>")
+keymap.set("n", "<leader>li", "<cmd>Lazy install<cr>")
+keymap.set("n", "<leader>ls", "<cmd>Lazy sync<cr>")
+keymap.set("n", "<leader>lu", "<cmd>Lazy update<cr>")
+keymap.set("n", "<leader>lp", "<cmd>Lazy profile<cr>")
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
