@@ -1,7 +1,8 @@
 return {
-  "f-person/git-blame.nvim",
-  event = "BufRead",
-  config = function()
-    vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameToggle<CR>", { desc = "Toggle Git Blame information" })
-  end
+	"f-person/git-blame.nvim",
+	cmd = "GitBlameToggle",
+	opts = {},
+	keys = {
+		{ "<leader>gb", "<cmd>GitBlameToggle<cr>", desc = "Toggle Git Blame" },
+	},
 }
