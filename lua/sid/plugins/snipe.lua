@@ -1,6 +1,6 @@
 return {
   "leath-dub/snipe.nvim",
-  lazy = true,
+  event = "BufRead",
   config = function()
     local snipe = require("snipe")
     snipe.setup()

@@ -9,7 +9,7 @@
 return {
   -- NOTE: Yes, you can install new plugins here!
   "mfussenegger/nvim-dap",
-  lazy = true,
+  event = "VeryLazy",
   -- NOTE: And you can specify dependencies as well
   dependencies = {
     -- Creates a beautiful debugger UI
