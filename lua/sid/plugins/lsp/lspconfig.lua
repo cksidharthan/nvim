@@ -41,6 +41,11 @@ return {
 			require("lsp-zero").on_attach(client)
 		end
 
+    require("lspconfig").tailwindcss.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
 		require("lspconfig").gopls.setup({
 			capabilities = capabilities,
 			on_attach = on_attach,

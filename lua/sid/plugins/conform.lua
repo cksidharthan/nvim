@@ -24,7 +24,7 @@ return {
 				bash = { "beautysh" },
 				proto = { "buf" },
 				rust = { "rustfmt" },
-				yaml = { "yamlfix" },
+				yaml = { "prettier" },
 				toml = { "taplo" },
 				css = { "prettier" },
 				scss = { "prettier" },
