@@ -1,7 +1,27 @@
 return {
   "CopilotC-Nvim/CopilotChat.nvim",
   branch = "canary",
-  event = "VeryLazy", -- or "BufReadPre
+  cmd = {
+    "CopilotChatToggle",
+    "CopilotAuth",
+    "CopilotChatOpen",
+    "CopilotChatClose",
+    "CopilotChatStop",
+    "CopilotChatReset",
+    "CopilotChatSave",
+    "CopilotChatLoad",
+    "CopilotChatDebugInfo",
+    "CopilotChatModels",
+    "CopilotChatExplain",
+    "CopilotChatReview",
+    "CopilotChatFix",
+    "CopilotChatOptimize",
+    "CopilotChatDocs",
+    "CopilotChatTests",
+    "CopilotChatFixDiagnostic",
+    "CopilotChatCommit",
+    "CopilotChatCommitStaged",
+  },
   dependencies = {
     { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
     { "nvim-lua/plenary.nvim" },  -- for curl, log wrapper

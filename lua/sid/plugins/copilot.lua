@@ -1,6 +1,5 @@
 return {
 	"zbirenbaum/copilot.lua",
-	cmd = "Copilot",
 	event = "InsertEnter",
 	keys = {
 		{ "<leader>cod", "<cmd>Copilot disable<CR>", desc = "Copilot disable" },
@@ -8,7 +7,7 @@ return {
 	},
 	opts = {
 		panel = {
-			enabled = true,
+			enabled = false,
 			auto_refresh = false,
 			keymap = {
 				jump_prev = "[[",

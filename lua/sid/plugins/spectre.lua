@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-  event = "VeryLazy",
+  lazy = true,
 	keys = {
 		{
 			"<leader>Rr",
