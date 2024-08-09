@@ -41,10 +41,10 @@ return {
 			require("lsp-zero").on_attach(client)
 		end
 
-    require("lspconfig").tailwindcss.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+		require("lspconfig").tailwindcss.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
 
 		require("lspconfig").gopls.setup({
 			capabilities = capabilities,
@@ -88,6 +88,34 @@ return {
 		require("lspconfig").tsserver.setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			ft = {
+				"javascript",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx",
+			},
+			settings = {
+				completions = {
+					completeFunctionCalls = true,
+				},
+			},
+			init_options = {
+				plugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = vim.fn.expand("~/")
+							.. ".local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin",
+						languages = { "javascript", "typescript", "vue" },
+					},
+				},
+			},
+			filetypes = {
+				"javascript",
+				"typescript",
+				"vue",
+			},
 		})
 
 		require("lspconfig").lua_ls.setup({
@@ -110,8 +138,9 @@ return {
 			on_attach = on_attach,
 			init_options = {
 				typescript = {
-          -- get the home directory of the current user and append the path to the typescript lib
-          tsdk = vim.fn.expand("~/") .. ".local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
+					-- get the home directory of the current user and append the path to the typescript lib
+					tsdk = vim.fn.expand("~/")
+						.. ".local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
 				},
 				preferences = {
 					disableSuggestions = true,
