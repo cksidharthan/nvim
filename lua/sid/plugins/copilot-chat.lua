@@ -34,8 +34,8 @@ return {
       -- see Configuration section for more options
       debug = false, -- Enable debugging
       show_help = false,
-      question_header = " ## Sid ",
-      answer_header = " ## Assistant ",
+      question_header = " ## 👨Sid ",
+      answer_header = " ## 🤖 GPT ",
       -- See Configuration section for rest
       -- default window options
       window = {
@@ -54,7 +54,13 @@ return {
 
 
     })
-    local keymap = vim.keymap
-    keymap.set("n", "<leader>cct", "<cmd>CopilotChatToggle<cr>", { desc = "Toggle Copilot Chat" })
   end,
+  keys = {
+    {
+      "<leader>cct",
+      function()
+        vim.cmd("CopilotChatToggle")
+      end,
+    },
+  },
 }

@@ -36,10 +36,12 @@ return {
 				"tailwindcss",
 				"lua_ls",
 				"emmet_ls",
+				"eslint",
 				"prismals",
 				"pyright",
 				"azure_pipelines_ls",
 				"bashls",
+				"golangci_lint_ls",
 				"dockerls",
 				"docker_compose_language_service",
 				"helm_ls",
@@ -55,6 +57,9 @@ return {
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter
+				"delve",
+				"goimports",
+				"shfmt"
 			},
 		})
 	end,
