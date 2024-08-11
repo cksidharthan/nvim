@@ -172,6 +172,18 @@ return {
 		require("lspconfig").yamlls.setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				yaml = {
+					schemas = {
+						kubernetes = "k8s-*.yaml",
+						["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+						["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+						["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+						["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] = "azure/*/*.{yml,yaml}",
+						["https://taskfile.dev/schema.json"] = "Taskfile.{yml,yaml}",
+					},
+				},
+			},
 		})
 
 		require("lspconfig").html.setup({
