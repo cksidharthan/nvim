@@ -51,3 +51,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format({async = false})
   end
 })
+
+
+-- make docker compose files yaml
+local function set_filetype(pattern, filetype)
+    vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+        pattern = pattern,
+        command = "set filetype=" .. filetype,
+    })
+end
+
+set_filetype({ "docker-compose.yml", "docker-compose.yaml" }, "yaml.docker-compose")

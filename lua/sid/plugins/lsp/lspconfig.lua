@@ -186,6 +186,34 @@ return {
 			},
 		})
 
+    require("lspconfig").docker_compose_language_service.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      -- initialize on docker compose file
+      filetypes = { "yaml.docker-compose" },
+      settings = {
+        docker = {
+          dockerComposeFile = {
+            diagnostics = {
+              enable = true,
+              onStartup = true,
+            },
+            hover = {
+              enable = true,
+            },
+            completion = {
+              enable = true,
+            },
+          },
+        },
+      },
+    })
+
+    require("lspconfig").dockerls.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
 		require("lspconfig").html.setup({
 			on_init = on_init,
 			capabilities = capabilities,
