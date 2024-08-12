@@ -172,6 +172,7 @@ return {
 		require("lspconfig").yamlls.setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "yaml", "yaml.docker-compose" },
 			settings = {
 				yaml = {
 					schemas = {
@@ -186,33 +187,48 @@ return {
 			},
 		})
 
-    require("lspconfig").docker_compose_language_service.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      -- initialize on docker compose file
-      filetypes = { "yaml.docker-compose" },
-      settings = {
-        docker = {
-          dockerComposeFile = {
-            diagnostics = {
-              enable = true,
-              onStartup = true,
-            },
-            hover = {
-              enable = true,
-            },
-            completion = {
-              enable = true,
-            },
-          },
-        },
-      },
-    })
+		require("lspconfig").docker_compose_language_service.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			-- initialize on docker compose file
+			filetypes = { "yaml.docker-compose" },
+			settings = {
+				docker = {
+					dockerComposeFile = {
+						diagnostics = {
+							enable = true,
+							onStartup = true,
+						},
+						hover = {
+							enable = true,
+						},
+						completion = {
+							enable = true,
+						},
+					},
+				},
+			},
+		})
 
-    require("lspconfig").dockerls.setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+		require("lspconfig").helm_ls.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "helm" },
+			settings = {
+				yaml = {
+					schemas = {
+						kubernetes = "*.{yaml,yml}",
+						["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+						["https://json.schemastore.org/chart.json"] = "/deployment/helm/*",
+					},
+				},
+			},
+		})
+
+		require("lspconfig").dockerls.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
 
 		require("lspconfig").html.setup({
 			on_init = on_init,
