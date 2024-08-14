@@ -4,6 +4,7 @@ return {
   cmd = {
     "CopilotChatToggle",
     "CopilotAuth",
+    "CopilotChat",
     "CopilotChatOpen",
     "CopilotChatClose",
     "CopilotChatStop",
@@ -34,7 +35,7 @@ return {
       -- see Configuration section for more options
       debug = false, -- Enable debugging
       show_help = false,
-      question_header = " ## 👨Sid ",
+      question_header = " ## 👨 Sid ",
       answer_header = " ## 🤖 GPT ",
       -- See Configuration section for rest
       -- default window options
@@ -51,8 +52,6 @@ return {
         footer = " May the force be with you ;) ", -- footer of chat window
         zindex = 1,                                -- determines if window is on top or below other floating windows
       },
-
-
     })
   end,
   keys = {
