@@ -1,3 +1,8 @@
+-- use Telescope find string search using <leader>fs
+-- send the list to quickfix list using Ctrl + q
+-- do :cfdo %s/stringOne/stringTwo/gc | update | bd     ---- update is to
+-- save the buffer, bd is to delete the buffers after replacing.
+
 return {
 	"nvim-pack/nvim-spectre",
 	dependencies = {
