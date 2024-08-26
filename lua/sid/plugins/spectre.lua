@@ -8,7 +8,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-	condig = function()
+	config = function()
 		require("spectre").setup({
 			replace_engine = {
 				["sed"] = {
